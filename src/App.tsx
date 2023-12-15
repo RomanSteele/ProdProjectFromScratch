@@ -1,12 +1,22 @@
-import './index.scss';
+import './styles/index.scss';
 import { Link, Route, Routes } from 'react-router-dom';
 import { AboutPageAsync } from './pages/about-page/about-page.async';
 import { MainPageAsync } from './pages/main-page/main-page.async';
 import { Suspense } from 'react';
+import { useTheme } from './theme/useTheme';
+
+export enum Theme {
+    LIGHT = 'light',
+    DARK = 'dark',
+}
 
 const App = () => {
+    
+    const {theme, toggleTheme} = useTheme();
+
     return (
-        <div className='app'>
+        <div className={`app ${theme}`}>
+            <button onClick={toggleTheme}>Toggle theme</button>
             <Link to={'/'}>MAIN </Link>
             <Link to={'/about'}> ABOUT</Link>
             <Suspense fallback={<div>Loading...</div>}>
