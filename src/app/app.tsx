@@ -1,15 +1,11 @@
 import './styles/index.scss';
 import { Link, Route, Routes } from 'react-router-dom';
-import { AboutPageAsync } from './pages/about-page/about-page.async';
-import { MainPageAsync } from './pages/main-page/main-page.async';
+import { AboutPage } from '../pages/about-page';
+import { MainPage } from '../pages/main-page';
 import { Suspense } from 'react';
-import { useTheme } from './theme/useTheme';
-import { classNames } from './helpers/classNames/class-names';
+import { useTheme } from './providers/theme-provider/lib/useTheme';
+import { classNames } from '../shared/lib/class-names/class-names';
 
-export enum Theme {
-    LIGHT = 'light',
-    DARK = 'dark',
-}
 
 const App = () => {
     
@@ -22,8 +18,8 @@ const App = () => {
             <Link to={'/about'}> ABOUT</Link>
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
-                    <Route path={'/about'} element = {<AboutPageAsync/>}/>
-                    <Route path={'/'} element = {<MainPageAsync />}/>
+                    <Route path={'/about'} element = {<AboutPage/>}/>
+                    <Route path={'/'} element = {<MainPage />}/>
                 </Routes>
             </Suspense>
         </div>
