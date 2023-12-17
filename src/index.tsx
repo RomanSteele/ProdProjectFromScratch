@@ -6,9 +6,9 @@ import { ThemeProvider } from './app/providers/theme-provider';
 
 render (
     <BrowserRouter>
-    <ThemeProvider>
-        <App />
-    </ThemeProvider>
+        <ThemeProvider>
+            <App />
+        </ThemeProvider>
     </BrowserRouter>,
     document.getElementById('root')
 )
