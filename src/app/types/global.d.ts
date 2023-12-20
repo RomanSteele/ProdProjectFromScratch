@@ -1,4 +1,4 @@
-declare module '*css' {
+declare module '*.scss' {
     interface IClassNames {
         [className: string]: string
     }
@@ -14,3 +14,5 @@ declare module '*.svg'{
     const SVG: React.VFC<React.SVGProps<SVGSVGElement>>;
     export default SVG;
 }
+
+declare const __IS_DEV__: boolean;
