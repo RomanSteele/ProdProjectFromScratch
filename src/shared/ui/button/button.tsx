@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 import { ButtonHTMLAttributes, FC } from 'react';
 import { classNames } from '../../../shared/lib/class-names/class-names';
 import cls from './button.module.scss';
@@ -12,7 +13,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: FC<ButtonProps> = (props) => {
-    const{
+    const {
         className,
         children,
         theme,
@@ -20,10 +21,11 @@ const Button: FC<ButtonProps> = (props) => {
     } = props;
 
     return (
-        <button className={classNames(cls.Button, {[cls[theme]]:true}, [className])}
+        <button
+            className={classNames(cls.Button, { [cls[theme]]: true }, [className])}
             {...otherProps}
-            >
-                {children}
+        >
+            {children}
         </button>
     );
 };
