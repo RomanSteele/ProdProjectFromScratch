@@ -1,7 +1,6 @@
+/* eslint-disable i18next/no-literal-string */
 import { Route, Routes } from 'react-router-dom';
 import { Suspense } from 'react';
-import { AboutPage } from '../../../../pages/about-page';
-import { MainPage } from '../../../../pages/main-page';
 import { routeConfig } from '../../../../shared/config/routeConfig/routeConfig';
 
 const AppRouter = () => (
