@@ -1,7 +1,10 @@
 {
-    "Test example": "Test example",
-    "Translate": "Translate",
-    "Main page": "Main page",
-    "Language": "English",
-    "Page not found": "Page not found"
+  "Test example": "Test example",
+  "Translate": "Translate",
+  "Main page": "Main page",
+  "Language": "English",
+  "Page not found": "Page not found",
+  "An unexpected error occurred": "An unexpected error occurred",
+  "Update page": "Update page",
+  "Throw error": "Throw error"
 }

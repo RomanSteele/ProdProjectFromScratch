@@ -3,5 +3,8 @@
   "Translate": "Перевод",
   "Main page": "Главная страница",
   "Language": "Русский",
-  "Page not found": "Страница не найдена"
+  "Page not found": "Страница не найдена",
+  "An unexpected error occurred": "Произошла непредвиденная ошибка",
+  "Update page": "Обновить страницу",
+  "Throw error": "Ошибка"
 }
