@@ -8,6 +8,7 @@
  */
 
 import type { Config } from 'jest';
+import path from 'path';
 
 const config: Config = {
 
@@ -35,10 +36,16 @@ const config: Config = {
     ],
 
     rootDir: '../../',
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
 
     testMatch: [
-        '<rootDir>/src/**/*(*.)test.ts',
+        '<rootDir>/src/**/*(*.)test.(ts|tsx)',
     ],
+
+    moduleNameMapper: {
+        '\\.(css|scss)$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    },
 
     // All imported modules in your tests should be mocked automatically
 
@@ -113,8 +120,6 @@ const config: Config = {
     // globals: {},
 
     // maxWorkers: "50%",
-
-    // moduleNameMapper: {},
 
     // modulePathIgnorePatterns: [],
 
