@@ -1,5 +1,4 @@
-import React from 'react';
-import { StoryFn, Meta } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { themeDecorator } from '../../../shared/config/storybook/theme-decorator/theme-decorator';
 import { Theme } from '../../../app/providers/theme-provider';
 import PageError from './page-error';
