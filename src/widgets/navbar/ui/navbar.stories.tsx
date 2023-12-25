@@ -1,19 +1,19 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import { StoryFn, Meta } from '@storybook/react';
 import { themeDecorator } from '../../../shared/config/storybook/theme-decorator/theme-decorator';
 import { Theme } from '../../../app/providers/theme-provider';
 import Navbar from './navbar';
+import { routerDecorator } from '../../../shared/config/storybook/router-decorator/router-decorator';
 
 export default {
     title: 'widget/Navbar',
+    decorators: [routerDecorator],
     component: Navbar,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof Navbar>;
+} as Meta<typeof Navbar>;
 
-const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
+const Template: StoryFn<typeof Navbar> = (args) => <Navbar {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};

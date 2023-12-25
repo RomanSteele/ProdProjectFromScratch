@@ -1,6 +1,6 @@
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
-import { buildCssLoaders } from './loaders/build-css-loader';
+import { buildCssLoader } from './loaders/build-css-loader';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const typeScriptLoader = {
@@ -43,7 +43,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         ],
     };
 
-    const cssLoader = buildCssLoaders(isDev);
+    const cssLoader = buildCssLoader(isDev);
 
     return [
         fileLoader,
