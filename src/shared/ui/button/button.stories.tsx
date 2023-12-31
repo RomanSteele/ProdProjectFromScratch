@@ -1,7 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react';
 import { themeDecorator } from '../../../shared/config/storybook/theme-decorator/theme-decorator';
 import { Theme } from '../../../app/providers/theme-provider/index';
-import Button, { ThemeButton } from './button';
+import Button, { ButtonTheme } from './button';
 
 export default {
     title: 'shared/Button',
@@ -21,18 +21,18 @@ Primary.args = {
 export const Clear = Template.bind({});
 Clear.args = {
     children: 'Text',
-    theme: ThemeButton.CLEAR,
+    theme: ButtonTheme.CLEAR,
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
     children: 'Text',
-    theme: ThemeButton.OUTLINE,
+    theme: ButtonTheme.OUTLINE,
 };
 
 export const OutlineDark = Template.bind({});
 OutlineDark.args = {
     children: 'Text',
-    theme: ThemeButton.OUTLINE,
+    theme: ButtonTheme.OUTLINE,
 };
 OutlineDark.decorators = [themeDecorator(Theme.DARK)];

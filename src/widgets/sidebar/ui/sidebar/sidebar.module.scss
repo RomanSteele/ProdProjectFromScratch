@@ -21,3 +21,10 @@
 .language {
     margin-left: 20px;
 }
+
+/* stylelint-disable-next-line selector-class-pattern */
+.collapseBtn {
+    position: absolute;
+    right: -32px;
+    bottom: 32px;
+}
