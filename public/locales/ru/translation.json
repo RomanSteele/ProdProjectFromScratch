@@ -6,5 +6,8 @@
   "Page not found": "Страница не найдена",
   "An unexpected error occurred": "Произошла непредвиденная ошибка",
   "Update page": "Обновить страницу",
-  "Throw error": "Ошибка"
+  "Throw error": "Ошибка",
+  "En": "Ru",
+  "MAIN":"Главная",
+  "ABOUT":"О сайте"
 }
