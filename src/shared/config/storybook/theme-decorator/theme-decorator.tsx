@@ -1,8 +1,10 @@
-import { Story } from '@storybook/react';
-import { Theme } from '../../../../app/providers/theme-provider';
+import { StoryFn } from '@storybook/react';
+import { Theme, ThemeProvider } from '../../../../app/providers/theme-provider';
 
-export const themeDecorator = (theme: Theme) => (StoryComponent: Story) => (
-    <div className={`app ${theme}`}>
-        <StoryComponent />
-    </div>
+export const themeDecorator = (theme: Theme) => (StoryComponent: StoryFn) => (
+    <ThemeProvider initialTheme={theme}>
+        <div className={`app ${theme}`}>
+            <StoryComponent />
+        </div>
+    </ThemeProvider>
 );
