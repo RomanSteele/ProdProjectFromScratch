@@ -15,7 +15,7 @@ interface ModalProps {
 
 const ANIMATION_DELAY = 300;
 
-const Modal = (props: ModalProps) => {
+export const Modal = (props: ModalProps) => {
     const {
         className,
         children,
@@ -66,9 +66,12 @@ const Modal = (props: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
+            <div className={classNames(cls.modal, mods, [className])}>
                 <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={cls.content} onClick={onContentClick}>
+                    <div
+                        className={cls.content}
+                        onClick={onContentClick}
+                    >
                         {children}
                     </div>
                 </div>
@@ -76,5 +79,3 @@ const Modal = (props: ModalProps) => {
         </Portal>
     );
 };
-
-export default Modal;

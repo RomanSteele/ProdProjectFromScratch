@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import cls from './navbar.module.scss';
 import { classNames } from '../../../shared/lib/class-names/class-names';
 import Button, { ButtonTheme } from '../../../shared/ui/button/button';
-import Modal from '../../../shared/ui/modal/modal';
+import { Modal } from '../../../shared/ui/modal/modal';
 
 interface NavbarProps {
     className?: string;
