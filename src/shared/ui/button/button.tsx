@@ -42,6 +42,7 @@ const Button: FC<ButtonProps> = (props) => {
 
     return (
         <button
+            type="button"
             className={classNames(cls.button, mods, [className])}
             {...otherProps}
         >
