@@ -3,6 +3,7 @@ module.exports = {
     "stylelint-config-standard-scss",
   ],
   rules: {
+    "selector-class-pattern": null,
     indentation: 4,
   },
 };

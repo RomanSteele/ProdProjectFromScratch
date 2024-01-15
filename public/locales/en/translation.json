@@ -9,5 +9,8 @@
   "Throw error": "Throw error",
   "En": "En",
   "MAIN":"Main",
-  "ABOUT":"About"
+  "ABOUT":"About",
+  "Login": "Login",
+  "Username": "Username",
+  "Password": "Password"
 }

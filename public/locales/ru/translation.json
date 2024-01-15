@@ -9,5 +9,8 @@
   "Throw error": "Ошибка",
   "En": "Ru",
   "MAIN":"Главная",
-  "ABOUT":"О сайте"
+  "ABOUT":"О сайте",
+  "Login": "Войти",
+  "Username": "Логин",
+  "Password": "Пароль"
 }
