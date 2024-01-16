@@ -8,9 +8,12 @@
   "Update page": "Обновить страницу",
   "Throw error": "Ошибка",
   "En": "Ru",
-  "MAIN":"Главная",
-  "ABOUT":"О сайте",
+  "MAIN": "Главная",
+  "ABOUT": "О сайте",
   "Login": "Войти",
   "Username": "Логин",
-  "Password": "Пароль"
+  "Password": "Пароль",
+  "Authorization form": "Форма авторизации",
+  "Wrong login or password": "Вы ввели неверный логин или пароль",
+  "Logout": "Выйти"
 }

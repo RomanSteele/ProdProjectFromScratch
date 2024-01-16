@@ -12,5 +12,8 @@
   "ABOUT":"About",
   "Login": "Login",
   "Username": "Username",
-  "Password": "Password"
+  "Password": "Password",
+  "Authorization form": "Authorization form",
+  "Wrong login or password": "Wrong login or password",
+  "Logout": "Logout"
 }

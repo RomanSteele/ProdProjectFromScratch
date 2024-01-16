@@ -7,3 +7,7 @@ export {
     UserSchema,
     User,
 } from './model/types/user';
+
+export {
+    getUserAuthData,
+} from './model/selectors/get-user-auth-data/get-user-auth-data';
