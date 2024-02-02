@@ -5,21 +5,32 @@ import { classNames } from '../../../../shared/lib/class-names/class-names';
 import cls from './login-form.module.scss';
 import Button, { ButtonTheme } from '../../../../shared/ui/button/button';
 import Input from '../../../../shared/ui/input/input';
-import { loginActions } from '../../model/slice/login-slice';
-import { getLoginState } from '../../model/selectors/get-login-state/get-login-state';
+import { loginActions, loginReducer } from '../../model/slice/login-slice';
 import { loginByUsername } from '../../model/services/login-by-username/login-by-username';
 import Text, { TextTheme } from '../../../../shared/ui/text/text';
+import { getLoginUsername } from '../../model/selectors/get-login-username/get-login-username';
+import { getLoginPassword } from '../../model/selectors/get-login-password/get-login-password';
+import { getLoginLoading } from '../../model/selectors/get-login-loading/get-login-loading';
+import { getLoginError } from '../../model/selectors/get-login-error/get-login-error';
+// eslint-disable-next-line max-len
+import DynamicModuleLoader, { ReducersList } from '../../../../shared/lib/components/dynamic-module-loader/dynamic-module-loader';
 
-interface LoginFormProps {
+export interface LoginFormProps {
     className?: string;
 }
+
+const initialReducers: ReducersList = {
+    loginForm: loginReducer,
+};
 
 const LoginForm = memo(({ className }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useDispatch();
-    const {
-        username, password, isLoading, error,
-    } = useSelector(getLoginState);
+
+    const username = useSelector(getLoginUsername);
+    const password = useSelector(getLoginPassword);
+    const isLoading = useSelector(getLoginLoading);
+    const error = useSelector(getLoginError);
 
     const onChangeUsername = useCallback((value:string) => {
         dispatch(loginActions.setUsername(value));
@@ -34,32 +45,35 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     }, [dispatch, username, password]);
 
     return (
-        <div className={classNames(cls.LoginForm, {}, [className])}>
-            <Text title={t('Authorization form')} />
-            {error && <Text text={error} theme={TextTheme.ERROR} />}
-            <Input
-                autofocus
-                type="text"
-                placeholder={t('Username')}
-                onChange={onChangeUsername}
-                value={username}
-            />
-            <Input
-                type="text"
-                className={cls.input}
-                placeholder={t('Password')}
-                onChange={onChangePassword}
-                value={password}
-            />
-            <Button
-                theme={ButtonTheme.OUTLINE}
-                className={cls.loginBtn}
-                onClick={onLoginClick}
-                disabled={isLoading}
-            >
-                {t('Login')}
-            </Button>
-        </div>
+        // eslint-disable-next-line i18next/no-literal-string
+        <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
+            <div className={classNames(cls.LoginForm, {}, [className])}>
+                <Text title={t('Authorization form')} />
+                {error && <Text text={error} theme={TextTheme.ERROR} />}
+                <Input
+                    autofocus
+                    type="text"
+                    placeholder={t('Username')}
+                    onChange={onChangeUsername}
+                    value={username}
+                />
+                <Input
+                    type="text"
+                    className={cls.input}
+                    placeholder={t('Password')}
+                    onChange={onChangePassword}
+                    value={password}
+                />
+                <Button
+                    theme={ButtonTheme.OUTLINE}
+                    className={cls.loginBtn}
+                    onClick={onLoginClick}
+                    disabled={isLoading}
+                >
+                    {t('Login')}
+                </Button>
+            </div>
+        </DynamicModuleLoader>
     );
 });
 
