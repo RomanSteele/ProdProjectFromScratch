@@ -8,12 +8,15 @@
   "Update page": "Update page",
   "Throw error": "Throw error",
   "En": "En",
-  "MAIN":"Main",
-  "ABOUT":"About",
+  "MAIN": "Main",
+  "ABOUT": "About",
   "Login": "Login",
   "Username": "Username",
   "Password": "Password",
   "Authorization form": "Authorization form",
   "Wrong login or password": "Wrong login or password",
-  "Logout": "Logout"
+  "Logout": "Logout",
+  "main": {
+    "Profile page": "Profile page"
+  }
 }

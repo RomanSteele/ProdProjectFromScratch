@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import cls from './navbar.module.scss';
@@ -11,7 +11,7 @@ interface NavbarProps {
     className?: string;
 }
 
-const Navbar = ({ className }: NavbarProps) => {
+const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
     const authData = useSelector(getUserAuthData);
@@ -61,6 +61,6 @@ const Navbar = ({ className }: NavbarProps) => {
             )}
         </div>
     );
-};
+});
 
 export default Navbar;

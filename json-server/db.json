@@ -17,5 +17,14 @@
         "password": "qwerty"
       }
     ],
-    "profile": { "name": "typicode" }
+    "profile": { 
+      "firstname": "Roman" ,
+      "lastname": "Roman",
+      "age": 28,
+      "currency": "CAD",
+      "country": "Canada",
+      "city": "Toronto",
+      "username": "admin",
+      "avatar": "https://i.pravatar.cc/150?img=3"
+  }
   }

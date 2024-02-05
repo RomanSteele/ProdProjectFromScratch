@@ -1,5 +1,5 @@
 /* eslint-disable react/button-has-type */
-import { ButtonHTMLAttributes, FC } from 'react';
+import { ButtonHTMLAttributes, ReactNode, memo } from 'react';
 import { classNames } from '../../../shared/lib/class-names/class-names';
 import cls from './button.module.scss';
 
@@ -23,9 +23,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?:boolean;
     size?: ButtonSize;
     disabled?: boolean;
+    children?: ReactNode;
 }
 
-const Button: FC<ButtonProps> = (props) => {
+const Button = memo((props: ButtonProps) => {
     const {
         className,
         children,
@@ -53,6 +54,6 @@ const Button: FC<ButtonProps> = (props) => {
             {children}
         </button>
     );
-};
+});
 
 export default Button;
