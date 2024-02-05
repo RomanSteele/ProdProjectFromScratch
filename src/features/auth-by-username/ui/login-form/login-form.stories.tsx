@@ -1,9 +1,11 @@
 import { StoryFn, Meta } from '@storybook/react';
 import LoginForm from './login-form';
 import { StoreDecorator } from '../../../../shared/config/storybook/store-decorator/store-decorator';
+import { routerDecorator } from '../../../../shared/config/storybook/router-decorator/router-decorator';
 
 export default {
     title: 'features/LoginForm',
+    decorators: [routerDecorator],
     component: LoginForm,
     argTypes: {
         backgroundColor: { control: 'color' },

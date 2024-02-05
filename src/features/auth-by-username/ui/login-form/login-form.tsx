@@ -28,7 +28,6 @@ const initialReducers: ReducersList = {
 const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
-
     const username = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
     const isLoading = useSelector(getLoginLoading);
@@ -44,13 +43,12 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
     const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUsername({ username, password }));
-        if (result.meta.requestStatus === 'rejected') {
+        if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();
         }
     }, [dispatch, username, password, onSuccess]);
 
     return (
-        // eslint-disable-next-line i18next/no-literal-string
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('Authorization form')} />
