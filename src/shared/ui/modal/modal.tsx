@@ -1,7 +1,8 @@
 import React, {
+    MutableRefObject,
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from '../../../shared/lib/class-names/class-names';
+import { Mods, classNames } from '../../../shared/lib/class-names/class-names';
 import cls from './modal.module.scss';
 import Portal from '../portal/portal';
 import { useTheme } from '../../../app/providers/theme-provider';
@@ -27,7 +28,7 @@ export const Modal = (props: ModalProps) => {
 
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
     const { theme } = useTheme();
 
     const closeHandler = useCallback(() => {
@@ -67,7 +68,7 @@ export const Modal = (props: ModalProps) => {
         }
     }, [isOpen]);
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };

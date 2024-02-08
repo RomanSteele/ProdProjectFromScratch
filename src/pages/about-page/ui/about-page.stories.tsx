@@ -11,7 +11,7 @@ export default {
     },
 } as Meta<typeof AboutPage>;
 
-const Template: StoryFn<typeof AboutPage> = (args: Record<string, unknown>) => <AboutPage {...args} />;
+const Template: StoryFn<typeof AboutPage> = () => <AboutPage />;
 
 export const Normal = Template.bind({});
 Normal.args = {};

@@ -1,5 +1,4 @@
 import { StoryFn } from '@storybook/react';
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema, StoreProvider } from '../../../../app/providers/store-provider';
 import { loginReducer } from '../../../../features/auth-by-username/model/slice/login-slice';
 import { profileReducer } from '../../../../entities/profile';

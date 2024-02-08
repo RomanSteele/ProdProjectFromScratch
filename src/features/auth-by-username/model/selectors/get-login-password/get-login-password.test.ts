@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { getLoginPassword } from './get-login-password';
 import { StateSchema } from '../../../../../app/providers/store-provider';
 
