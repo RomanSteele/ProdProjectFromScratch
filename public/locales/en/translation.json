@@ -18,5 +18,9 @@
   "Logout": "Logout",
   "main": {
     "Profile page": "Profile page"
+  },
+  "profile": {
+    "Please try to reload this page": "Please try to reload this page",
+    "An error occured": "An error occured"
   }
 }

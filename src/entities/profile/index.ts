@@ -13,3 +13,7 @@ export {
 } from './model/services/fetch-profile-data/fetch-profile-data';
 
 export { ProfileCard } from './ui/profile-card/profile-card';
+
+export { getProfileData } from './model/selectors/get-profile-data/get-profile-data';
+export { getProfileError } from './model/selectors/get-profile-error/get-profile-error';
+export { getProfileLoading } from './model/selectors/get-profile-loading/get-profile-loading';

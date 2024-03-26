@@ -18,5 +18,8 @@
   "Logout": "Выйти",
   "main": {
     "Profile page": "Профиль"
+  },
+  "profile": {
+    "An error occured": "Произошла ошибка"
   }
 }
